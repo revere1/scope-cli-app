@@ -1,0 +1,180 @@
+<!--
+  Generated template for the ViewPackagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title style="text-align:center">Bike Service</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="badge">
+  <ion-item style="margin-top: -5px;" no-lines>
+    <ion-icon ios="ios-locate" md="md-locate" style="color: black"></ion-icon>
+    <b style="color: black">Hyderabad</b>
+    <ion-badge item-end style="background-color: #01040a;">Change</ion-badge>
+  </ion-item>
+  <p text-center padding style="margin-top:-5px">
+    <b>Help us understand your requirement</b>
+  </p>
+  <ion-card
+    radio-group
+    padding
+    [(ngModel)]="capacity"
+    ngDefaultControl
+    style="margin-top:-1em"
+  >
+    <p text-center><b>What is the capacity of your bike?</b></p>
+    <ion-item>
+      <ion-radio value="Upto 100CC" disable="true"></ion-radio>
+      <ion-label>Upto 100CC </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-radio value="More than 150CC"></ion-radio>
+      <ion-label>More than 150CC</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-radio value="Royal Enfield"></ion-radio>
+      <ion-label>Royal Enfield</ion-label>
+    </ion-item>
+  </ion-card>
+  <!-- - 180CC -->
+  <p text-center>On which day do you want the service?</p>
+  <div class="row" style="margin-left: 1em">
+    <button
+      ion-button
+      round
+      (click)="daySelect(slot_days, day, 'day')"
+      [ngClass]="{'selected-day': day.selected}"
+      [disabled]="day.disable"
+      color="white"
+      class="btnsize"
+      *ngFor="let day of slot_days"
+    >
+      {{day.label}}
+      <ion-datetime
+        *ngIf="day.calander"
+        (ionChange)="dateChange($event)"
+        displayFormat="DD/MM/YYYY"
+        [min]="moment().add(2, 'days').format('YYYY-MM-DD')"
+        [max]="moment().add(2, 'month').format('YYYY-MM-DD')"
+      >
+      </ion-datetime>
+
+      <!-- <ion-calendar *ngIf="day.calander" [(ngModel)]="date"
+� [format]="'YYYY-MM-DD'">
+</ion-calendar> -->
+      <!-- <mat-form-field *ngIf="day.calander">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> -->
+    </button>
+    <!-- <button ion-button round (click)="tMro('Tomorrow')" color="white" class="btnsize">Tomrrow</button>
+  <button ion-button round (click)="future('Future')" color="white" class="btnsize">Future</button> -->
+  </div>
+
+  <p text-center>Your preferred time?</p>
+
+  <div class="container">
+    <div class="row">
+      <button
+        ion-button
+        type="button"
+        round
+        (click)="daySelect(slots, slot)"
+        [disabled]="slot.disable"
+        [ngClass]="{'selected-day': slot.selected}"
+        color="white"
+        class="btnsizetime"
+        *ngFor="let slot of slots"
+      >
+        {{slot.label}}
+      </button>
+      <!-- <button ion-button type="button" round (click)="time2('11AM-1PM')" [disabled]="sec" color="white" class="btnsizetime">11AM to
+        1PM</button>
+      <button ion-button type="button" round (click)="time3('1Pm-3PM')" [disabled]="third" color="white" class="btnsizetime">1PM to
+        3PM</button>
+      <button ion-button type="button" round (click)="time4('3PM-5PM')" [disabled]="fourth" color="white" class="btnsizetime">3PM to
+        5PM</button>
+      <button ion-button type="button" round (click)="time5('5PM-7PM')" [disabled]="fifth" color="white" class="btnsizetime">5PM to
+        7PM</button> -->
+    </div>
+  </div>
+  <button ion-button color="danger" full (click)="choosePkg()">
+    Choose A Package
+  </button>
+  <!-- <button ion-button color="danger" full (click)="viewP(capacity,serviceday,servicetime)">Choose A Package</button> -->
+</ion-content>
+
+<!-- Date Buttons -->
+
+<!-- <ion-row radio-group [(ngModel)]="serviceday" ngDefaultControl> -->
+<!-- <ion-col col-6>
+      <ion-item>
+        <ion-label>Today</ion-label>
+        <ion-radio value="Today" disable="true"></ion-radio>
+      </ion-item>
+
+    </ion-col>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label>Tomorrow</ion-label>
+        <ion-radio value="Tomorrow" disable="true"></ion-radio>
+      </ion-item>
+    </ion-col> -->
+<!-- <ion-col col-12>
+      <ion-item>
+        <ion-label>Future</ion-label>
+        <ion-input  type="date" [(ngModel)]="serviceday"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row> -->
+<!-- <button item-start class="rr">Today</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <ion-badge style="margin-right: 10px;" [(ngModel)]="serviceday">Tomorrow</ion-badge>
+      <ion-badge item-end [(ngModel)]="serviceday">Feature</ion-badge> -->
+<!-- </ion-item> -->
+
+<!-- Date Buttons -->
+
+<!-- Timmings Buttons -->
+<!-- <ion-row radio-group [(ngModel)]="servicetime" ngDefaultControl>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label>9AM-11AM</ion-label>
+        <ion-radio value="9AM-11AM" disable="true"></ion-radio>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label>11AM-1PM</ion-label>
+        <ion-radio value="11AM-1PM" disable="true"></ion-radio>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label>1PM-3PM</ion-label>
+        <ion-radio value="1PM-3PM" disable="true"></ion-radio>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label>3PM-5PM</ion-label>
+        <ion-radio value="3PM-5PM" disable="true"></ion-radio>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item>
+        <ion-label>5PM-7PM</ion-label>
+        <ion-radio value="5PM-7PM" disable="true"></ion-radio>
+      </ion-item>
+    </ion-col>
+  </ion-row> -->
+<!-- <ion-badge item-start  value="9AM-11AM">9AM-11AM</ion-badge> -->
+
+<!-- <ion-badge item-start>9AM-11AM</ion-badge>&nbsp;&nbsp;&nbsp;
+        <ion-badge item-center>3PM-5PM</ion-badge>
+        <ion-badge item-end>5PM-7PM</ion-badge> -->
+<!-- Timmings Buttons -->

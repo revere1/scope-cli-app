@@ -1,0 +1,26 @@
+<!--
+  Generated template for the OtpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.color: red;
+-->
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>OTP</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h4 style="text-align: center;color: blue; ">OTP form SCOPE:</h4>
+
+  <form [formGroup]="otpForm" (ngSubmit)="otpIn()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Enter Your OTP</ion-label>
+        <ion-input type="otp" formControlName="otp">{{otp}}</ion-input>
+      </ion-item>
+      <br />
+    </ion-list>
+    <button ion-button round block [disabled]="!otpForm.valid">Submit</button>
+  </form>
+</ion-content>

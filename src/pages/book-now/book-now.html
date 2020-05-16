@@ -1,0 +1,105 @@
+<!--
+  Generated template for the BookNowPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>Review Your Selection</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-row no-padding>
+        <ion-col col-3 text-center>
+          <p class="month">
+            <img src="../../assets/imgs/2.jpg" />
+          </p>
+          <p class="day">
+            Rs.{{Rupees}}/-
+          </p>
+        </ion-col>
+        <ion-col class="event-name">
+          <b> Scope Auto works</b>
+          Hyderabad,500018
+          <p class="event-location">
+            Bike Repair & Service, Breakdown Assistance
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-row no-padding>
+        <ion-col col-8>
+          <p>
+            <b>Your Requirement</b>
+          </p>
+        </ion-col>
+        <ion-col col-8>
+          <p class="day" style="font:10px">
+            <b style="color:blue">Bike Repair & Service</b><br />
+            Service Type:Bike Regular Service,Engine<br />
+            CC: {{serviceName}}
+          </p>
+        </ion-col>
+        <ion-col col-12 class="event-name">
+          <b
+            >Price
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Preferred Date & Time</b
+          >
+          <p>
+            Rs.{{Rupees}}/-
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{daySlot}}
+            | {{timeSlot}}
+          </p>
+          <!-- <p class="event-location">
+          </p> -->
+        </ion-col>
+        <ion-col col-12>
+          The price shown is an approximate service charge. All the consumables
+          and parts that will be used are charged extra.
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <ion-item>
+      <ion-label stacked>Do you have any special instructions?</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-card>
+  <b padding>Package Description</b>
+  <p padding>Bike Repair & Service includes following activities:</p>
+  <ul>
+    <li>Doorstep Pickup</li>
+    <li>Doorstep Delivery</li>
+    <li>Consultancy</li>
+    <li>Engine Check Up</li>
+    <li>Fuel Injection Adjustment</li>
+    <li>Battery Check Up</li>
+    <li>Carburetor Bowl Cleaning</li>
+    <li>Chain Adjustment</li>
+    <li>Chain Lubrication</li>
+    <li>Electrical Check Up</li>
+    <li>Spark Plug Cleaning</li>
+    <li>Air Filter Cleaning</li>
+    <li>Clutch Wire Tuning</li>
+    <li>Fork Check and Adjustment</li>
+    <li>Front and Rear Brake Adjustment</li>
+    <li>Lubrication of Control Cables</li>
+    <li>Lubrication of Swinging Parts</li>
+    <li>Lubrication of Pivot Parts</li>
+    <li>Speedometer & Fuel Meter Check</li>
+    <li>Tightening of Scress & Nutes</li>
+    <li>Tyre Presser Check</li>
+  </ul>
+</ion-content>
+<ion-footer>
+  <button ion-button color="primary" full (click)="openFilterModal()">
+    Confirm Booking
+  </button>
+</ion-footer>

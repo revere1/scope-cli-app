@@ -1,0 +1,62 @@
+
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Update Address</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+<form [formGroup]="editAddressForm">
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Your Full Name</ion-label>       
+        <ion-input type="text" formControlName="full_name"></ion-input>
+      </ion-item>
+      <div class="error">
+          <p *ngIf="editAddressForm.controls.full_name.hasError('required') && editAddressForm.controls.full_name.touched"> full name is required!</p>
+          <p *ngIf="editAddressForm.controls.full_name.hasError('pattern') && editAddressForm.controls.full_name.touched">only small and capital letters are allowed!</p>
+          <p *ngIf="editAddressForm.controls.full_name.hasError('minlength') && editAddressForm.controls.full_name.touched"> Minimum username length is 6!</p>
+          <p *ngIf="editAddressForm.controls.full_name.hasError('maxlength') && editAddressForm.controls.full_name.touched"> Maximum username length is 30!</p>
+        </div>
+      <ion-item>
+        <ion-label floating>Full Address</ion-label>       
+        <ion-input type="text" formControlName="full_address"></ion-input>
+      </ion-item>
+      <div class="error">
+          <p *ngIf="editAddressForm.controls.full_address.hasError('required') && editAddressForm.controls.full_address.touched"> full Address is required!</p>
+          <p *ngIf="editAddressForm.controls.full_address.hasError('pattern') && editAddressForm.controls.full_address.touched">only small and capital letters are allowed!</p>
+          <p *ngIf="editAddressForm.controls.full_address.hasError('minlength') && editAddressForm.controls.full_address.touched"> Minimum full Address length is 6!</p>
+          <p *ngIf="editAddressForm.controls.full_address.hasError('maxlength') && editAddressForm.controls.full_address.touched"> Maximum full Address length is 150!</p>
+        </div>
+      <ion-item>
+        <ion-label floating>City</ion-label>      
+        <ion-input type="text" formControlName="city"></ion-input>
+      </ion-item>
+      <div class="error">
+          <p *ngIf="editAddressForm.controls.city.hasError('required') && editAddressForm.controls.city.touched"> City is required!</p>
+          <p *ngIf="editAddressForm.controls.city.hasError('pattern') && editAddressForm.controls.city.touched">only small and capital letters are allowed!</p>
+          <p *ngIf="editAddressForm.controls.city.hasError('minlength') && editAddressForm.controls.city.touched"> Minimum City length is 6!</p>
+          <p *ngIf="editAddressForm.controls.city.hasError('maxlength') && editAddressForm.controls.city.touched"> Maximum City length is 20!</p>
+        </div>
+      <ion-item>
+        <ion-label floating>Pin Code</ion-label>      
+        <ion-input type="number" formControlName="pincode"></ion-input>
+      </ion-item>
+      <div class="error">
+          <p *ngIf="editAddressForm.controls.pincode.hasError('required') && editAddressForm.controls.pincode.touched"> Pincode is required!</p>
+          <p *ngIf="editAddressForm.controls.pincode.hasError('pattern') && editAddressForm.controls.pincode.touched">only Numbers are allowed!</p>
+          <p *ngIf="editAddressForm.controls.pincode.hasError('minlength') && editAddressForm.controls.pincode.touched"> Minimum Pincode length is 5!</p>
+          <p *ngIf="editAddressForm.controls.pincode.hasError('maxlength') && editAddressForm.controls.pincode.touched"> Maximum Pincode length is 6!</p>
+        </div>
+
+        <button ion-button color="orange" round full (click)="update()" [disabled]="!editAddressForm.valid">Update My Address</button>
+   
+      <br>
+    </ion-list>
+  </ion-card>
+  </form>
+</ion-content>
+

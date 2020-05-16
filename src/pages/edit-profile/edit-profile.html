@@ -1,0 +1,52 @@
+<!--
+  Generated template for the EditProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="editProfileForm">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Your Full Name</ion-label>         
+          <ion-input type="text" formControlName="full_name"></ion-input>
+        </ion-item>
+        <div class="error">
+            <p *ngIf="editProfileForm.controls.full_name.hasError('required') && editProfileForm.controls.full_name.touched"> full name is required!</p>
+            <p *ngIf="editProfileForm.controls.full_name.hasError('pattern') && editProfileForm.controls.full_name.touched">only small and capital letters are allowed!</p>
+            <p *ngIf="editProfileForm.controls.full_name.hasError('minlength') && editProfileForm.controls.full_name.touched"> Minimum username length is 6!</p>
+            <p *ngIf="editProfileForm.controls.full_name.hasError('maxlength') && editProfileForm.controls.full_name.touched"> Maximum username length is 30!</p>
+          </div>
+        <ion-item>
+          <ion-label floating>Your E-Mail ID </ion-label>         
+          <!-- <ion-input type="email"[(ngModel)]="item.email"></ion-input> -->
+          <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <div class="error">
+          <p *ngIf="editProfileForm.controls.email.hasError('required') && editProfileForm.controls.email.touched"> Email is required!</p>
+          <p *ngIf="editProfileForm.controls.email.hasError('email') && editProfileForm.controls.email.touched">Enter valid email!</p>
+        </div>
+        <ion-item>
+          <ion-label floating>Your Mobile Number</ion-label>      
+          <ion-input type="number" formControlName="mobile_number"></ion-input>
+        </ion-item>
+        <div class="error">
+            <p *ngIf="editProfileForm.controls.mobile_number.hasError('required') && editProfileForm.controls.mobile_number.touched">mobile number is required!</p>
+            <p *ngIf="editProfileForm.controls.mobile_number.hasError('minlength') && editProfileForm.controls.mobile_number.touched">minimum mobile number length is 10!</p>
+            <p *ngIf="editProfileForm.controls.mobile_number.hasError('maxlength') && editProfileForm.controls.mobile_number.touched"> maximum mobile number length is 12!</p>
+          </div> 
+          <button ion-button color="orange" full (click)="submit()" [disabled]="!editProfileForm.valid">Update Profile</button>
+        <!-- </ion-list>-->
+        <br>
+      </ion-list>
+    </form>
+</ion-content>

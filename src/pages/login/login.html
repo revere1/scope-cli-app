@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title style="text-align: center">Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content disable-scroll>
+    <img src="../../assets/imgs/bikeImg.jpeg" class="img-position">
+  <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+    <br>
+    <ion-input class="center" style="color: black;" type="number" placeholder="Enter Your Mobile Number" formControlName="mobile_number"></ion-input>
+    <div class="error">
+      <p *ngIf="signInForm.controls.mobile_number.hasError('required') && signInForm.controls.mobile_number.touched">
+        mobile number is required!</p>
+      <p *ngIf="signInForm.controls.mobile_number.hasError('minlength') && signInForm.controls.mobile_number.touched">
+        minimum mobile number length is 10!</p>
+      <p *ngIf="signInForm.controls.mobile_number.hasError('maxlength') && signInForm.controls.mobile_number.touched">
+        maximum mobile number length is 12!</p>
+    </div>
+    <button ion-button round color="danger" [disabled]="!signInForm.valid">Login</button>
+    <br>
+  </form>
+</ion-content>

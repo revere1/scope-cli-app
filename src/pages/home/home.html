@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-navbar  color="danger">
+    <ion-row>
+      <ion-col (click)="loc()">
+        <ion-icon ios="ios-locate" md="md-locate" style="color: white"></ion-icon>
+        <b style="color: white">Choose Your Location</b>
+      </ion-col>
+    </ion-row>
+    <ion-searchbar>
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+<ion-content  scroll=false>
+  <ion-slides pager autoplay="2000" loop=true class="slide">
+
+    <ion-slide>
+      <img src="../../assets/imgs/img1.jpg" style="height: 50vw;width: 100vw;">
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../assets/imgs/img2.jpg" style="height: 50vw;width: 100vw;">
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../assets/imgs/img3.jpeg" style="height: 50vw;width: 100vw;">
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../assets/imgs/img5.jpeg" style="height: 50vw;width: 100vw;">
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../assets/imgs/image8.jpeg" style="height: 50vw;width: 100vw;">
+    </ion-slide>
+
+  </ion-slides>
+  <ion-grid padding>
+    
+       
+        <button ion-button round block (click)="bike()"><i class="fa fa-motorcycle" aria-hidden="true" style="color: white;font-size: 1.5em; margin-left:-4em"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bike Services</button>
+        <!-- <button ion-button  (click)="bike()"round large ><i class="fa fa-motorcycle" aria-hidden="true" style="color: blue;font-size: 1.5em;"></i>Bike Services</button> -->
+        <!-- <ion-col col-6  (click)="bike()"><i class="fa fa-motorcycle" aria-hidden="true" style="color: blue;font-size: 1.5em;"></i>Bike Services</ion-col> -->
+        <!-- <ion-col col-6><i class="fa fa-motorcycle" aria-hidden="true" style="color: blue;font-size: 1.5em;"></i>Bike Washing Services</ion-col> -->
+      
+    </ion-grid><br><br>
+  <!-- <ion-card > -->
+   
+    <!-- <img src="img/nin-live.png" /> -->
+    <!-- <ion-item > -->
+      <!-- <ion-icon name="football" item-start large></ion-icon> -->
+      <div style="background-color: rgb(248, 235, 118)">
+        
+    <marquee scrollamount="13"><h1 style="font-size:80px; color: red;">On First Booking 50% Off</h1></marquee>
+   <br></div> <!-- <p>11 N. Way St, Madison, WI 53703</p> -->
+    <!-- </ion-item> -->
+  <!-- </ion-card> -->
+  <!-- <ion-scroll scrollX="true" direction="x" class="banners" style="margin-top: -5em;">
+    <img *ngFor="let banner of banners" [src]="server_api+banner?.banner" onError="this.src='assets/imgs/noimage.png'"
+      (click)="move(banner?.btype,banner?.btype_id)">
+  </ion-scroll>
+  <ion-label>
+    <span style="float: left;">
+      <b>SPECIAL SERVICES </b>
+    </span>
+    <a style="float: right;">View All</a>
+  </ion-label> -->
+
+  <!-- <ion-grid> -->
+      <!-- <ion-row>
+      <ion-col col-6><div>
+            <img src="../../assets/imgs/bike1.jpg" style="max-height: 130px;" />
+          </div>
+          <p>Bike service</p><p class="price">₹1,000.00</p>
+
+        </ion-col>
+     
+        <ion-col col-6><div>
+            <img src="../../assets/imgs/bike1.jpg" style="max-height: 130px;" />
+          </div>
+          <p>Bike service</p>
+          <p class="price">₹1,000.00</p>
+        </ion-col>
+      </ion-row> -->
+      <!-- <ion-row>
+          <ion-col col-6><div>
+              <img src="../../assets/imgs/bike3.jpg" style="max-height: 130px;" />
+            </div>
+            <p>Bike service</p></ion-col>
+          <ion-col col-6><div>
+              <img src="../../assets/imgs/bike3.jpg" style="max-height: 130px;" />
+            </div>
+            <p>Bike service</p></ion-col>
+        </ion-row>
+    </ion-grid> -->
+  <!-- <ion-scroll scrollX="true" direction="x" class="special-items">
+    <ion-card>
+      <ion-col>
+        <div>
+          <img src="../../assets/imgs/bike1.jpg" style="max-height: 130px;" />
+        </div>
+        <p>Bike service</p>
+        <p class="price">₹1,000.00</p>
+      </ion-col>
+    </ion-card>
+    <ion-card>
+      <ion-col>
+        <div>
+          <img src="../../assets/imgs/bike2.jpeg" style=" max-height: 130px;" />
+        </div>
+        <p>Bike wash</p>
+        <p class="price">₹500.00</p>
+      </ion-col>
+    </ion-card>
+    <ion-card>
+      <ion-col col-3>
+        <div>
+          <img src="../../assets/imgs/bike3.jpg" style="    max-height: 130px;" />
+        </div>
+        <p>New bike service</p>
+        <p class="price">₹800.00</p>
+      </ion-col>
+    </ion-card>
+  </ion-scroll> -->
+<!-- <img src="assets/imgs/dashboard1.png" style="height: 50vw;width: 100vw;"> -->
+</ion-content>
+<!-- <ion-footer>
+  <ion-toolbar color="primary">
+    <ion-segment color="light">
+      <ion-segment-button (click)="signin()">
+        <ion-icon name="home"></ion-icon>
+          
+      </ion-segment-button>
+      <ion-segment-button value="tabButtonTwo" (click)="signin()">
+        My Profile
+      </ion-segment-button>
+      <ion-segment-button value="tabButtonThree">
+        My orders
+      </ion-segment-button>
+      <ion-segment-button value="Alerts">
+        Alerts
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer> -->

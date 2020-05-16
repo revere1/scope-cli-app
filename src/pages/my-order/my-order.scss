@@ -1,0 +1,216 @@
+page-my-order {
+    .item-icon img{
+        height: 30px;
+        width: 40px;
+    }
+    // .content .col {
+    //     border-left:  0.5px solid #ececec;
+    //     border-bottom: 0.5px solid #ececec;
+    // }
+    // .content .col:nth-child(4n+1) {
+    //     border-left: none;
+    // }
+    // .content .col:nth-child(4n+4) {
+    //     border-right: none;
+    // }
+    // .scroll-content {
+    //     text-align: center;
+    // }
+    .icon-circle {
+        border: 1px solid #4eb950;
+        height: 1.5em;
+        width: 1.5em;
+        border-radius: 12px;
+        margin: 0 auto;
+    }
+    // .searchbar .searchbar-search-icon {
+    //     right: 15px !important;
+    //     left: unset !important;
+    //     top :15px !important;
+    //     background-size: 25px;
+    // }
+    // .toolbar-background {
+    //     background-image: url('../../assets/imgs/rbg.png')!important;
+    //     background-size: cover;
+    //     background-position: center center;
+    //     background-repeat: no-repeat;
+    // }
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: white;
+    }
+    .arrow {
+        margin-top: 5px;
+        height :10px;
+    }
+    .toolbar {
+        min-height: 29px !important;
+        padding-right: 5px;
+    }
+    .searchbar .searchbar-input {
+        padding: 10px 20px !important;
+    }
+    .text-alignment,.text-alignment div {
+        float: left;
+    }
+    // p {
+    //     font-size: 10px !important;
+    // }
+    // .card {
+    //     width:46%;
+    //     margin: 5px;
+    //     box-shadow: none !important;
+    // }
+    // ion-card.card {
+    //     min-height: 200px;
+    //     display: inline-table;
+    //     padding-right: 10px;
+    // }
+    // .card p {
+    //     font-size: 1.2rem;
+    //     text-align: left !important;
+    //     font-size: 1.2rem !important; 
+    // }
+    // .card-md + ion-card {
+    //     margin-top: 8px;
+    // }
+    // .price {
+    //     color: #2f9a4f;
+    // }
+    // .scroll-zoom-wrapper {
+    //     white-space: nowrap;
+    // }
+    // ion-scroll.special-items.scroll-x {
+    //     min-height: 220px; 
+    //     height: auto;
+    //         .scroll-content {
+    //         padding: 0px !important;
+    //     }    
+    // }
+    // ion-scroll.banners.scroll-x {
+    //     min-height: 100px; 
+    //     height: auto;
+    //         .scroll-content {
+    //         padding: 0px !important;
+    //     } 
+    //     margin-top: 10px;   
+    // }
+    // .searchbar-has-value.searchbar-has-focus{
+    //     .searchbar-search-icon {
+    //         display: none !important;
+    //     }
+    // }
+    // .toolbar .searchbar-ios .searchbar-input {
+    //     min-height: 40px;
+    //     background-color: white;
+    // }
+    // .searchbar-wp .searchbar-input-container  {
+    //     background-color: white;
+    //     border: none !important;
+    // }
+    // .toggle-btn {
+    //     padding-top: 10px ;
+    //     padding-bottom: 10px;
+    // }
+    // .toggle-btn img {
+    //     height: 35px;
+    //     margin-left: 95px;
+    //     margin-top: -7px;
+    // }
+    // .toolbar .searchbar {
+    //     padding-left: 10px;
+    //     padding-right: 10px;
+    // }
+    // .bar-button:first-child {
+    //     margin-left: -7%;
+    // }
+    // .searchbar-ios .searchbar-search-icon {
+    //     right: 20px !important;
+    //     left: unset !important;
+    //     top: 15px !important;
+    //     background-size: 15px;
+    // }
+    // .count {
+    //     position: absolute;
+    //     width: 18px;
+    //     height: 18px;
+    //     top: -3px;
+    //     left: 19px;
+    //     background: #f8631a;
+    //     font-size: 1.2rem;
+    //     color: #ffffff;
+    //     text-align: center;
+    //     border-radius: 50%;
+    //     line-height: 1.7rem;
+    //     border: 0.5px solid #fff;
+    // }
+
+    // .slide {
+    //     height:50vw;
+    //     width:100vw;
+    // }
+    .badge-md {
+        border-radius: 35px;
+        color: #fff;
+        background-color: #488aff;
+        /* margin-right: 79px; */
+        margin-left: 52px;
+    }
+
+    // .background {
+    //     background-image: url('../assets/imgs/bg.png');
+	// 	background-repeat: no-repeat;
+    //     background-size:100%;
+    // }
+    // .img-position {
+    //     height:80px;
+    //     margin-top: 50px;
+    //     margin-bottom: 25px;
+    // }
+    // .scroll-content {
+    //     padding-bottom: 0px !important;
+    //     text-align: center;
+    // }
+    // .list .item-block .item-inner {
+    //     border-bottom: 1px solid #dedede !important;
+    //     margin-left: 20px;
+    //     margin-right: 30px;
+    // }
+    // .button-round {
+    //     background-color: #4eb950;
+    //     padding: 0px 8.7rem;
+    //     margin-top:50px;
+    // }
+    // ion-icon {
+    //     margin-top: 33px !important;
+    //     color: #dedede;
+    //     font-size: 2.5rem !important;
+    // }
+    // .card {
+    //     box-shadow:  none !important;
+    //     border-radius: 10px ;
+    // }
+    // p {
+    //     margin: 5px 0 2px !important;
+    // }
+    // a {
+    //     color:#4eb950 !important;
+    // }
+    // ion-input {
+    //     font-size: 14px; 
+    // }
+    // ion-label {
+    //     font-size: 12px !important; 
+    // }
+    // .text-input-wp {
+    //     border: 0px !important;
+    // }
+    // .button {
+    //     box-shadow:  none !important;
+    // }
+    // .button.activated {
+    //     background-color: #4eb950 !important;
+    //   }
+}

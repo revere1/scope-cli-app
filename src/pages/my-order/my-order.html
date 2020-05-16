@@ -1,0 +1,89 @@
+<!--
+  Generated template for the MyOrderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- padding class="background" -->
+<ion-header >
+    <ion-navbar color="danger" no-border-bottom>
+      <ion-title style="color:white;text-align: center">
+        My orders
+      </ion-title>
+    </ion-navbar>
+    <!-- <ion-toolbar no-border-top  color="danger">
+      <ion-segment>
+        <ion-segment-button>
+          Services
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar> -->
+    <ion-toolbar no-border-top>
+      <ion-segment [(ngModel)]="pet">
+        <ion-segment-button value="order">
+          Order
+        </ion-segment-button>
+        
+        <ion-segment-button value="qreceive">
+          Quote Received
+        </ion-segment-button>
+        <ion-segment-button value="reord">
+          Reorders
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  
+    <ion-content>
+      <div [ngSwitch]="pet">
+        <ion-list *ngSwitchCase="'order'">
+        <div *ngIf="!myOrderData" style="margin-top: 7em;margin-left: 5em;">No Orders Found</div>
+          <ion-card *ngFor="let order of myorders">     
+            <ion-card-content>
+              <ion-row no-padding>      
+                <ion-col class="event-name">
+                  <b> Scope Auto works</b>
+                  <p class="day">
+                    Amount-Rs.499
+                   </p>
+                  <p class="event-location">                 
+                    {{order.service_name}}
+                  </p>
+                </ion-col>
+                <ion-col col-6 text-center>
+                  <b> 
+                    Booking ID:{{order.id_book_services}}
+                  </b>            
+                </ion-col>          
+                <ion-col>
+                  <p class="day">
+                       Schedule-{{order.day_slot}} | {{order.time_slot}}
+                  </p> 
+                <ion-item no-lines padding>
+                    <p *ngIf="order.status === 'Cancelled'" style="color: red;">{{order.status}}</p>
+                    <p *ngIf="order.status === 'Active'" style="color: green;">{{order.status}}</p>
+                    <!-- <p *ngIf="order.status === 'InActive'" style="color: blue;">{{order.status}}</p> -->
+                  <ion-badge item-end (click)="viewSP(order.id_book_services,order.id_user)">DETAILS</ion-badge>
+                </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+        
+          </ion-card>
+        </ion-list>
+    
+        <ion-list *ngSwitchCase="'qreceive'">
+          <div style="margin-top: 7em;margin-left: 5em;">No Quote Received</div>
+        </ion-list>
+    
+        <ion-list *ngSwitchCase="'reord'">
+          <div style="margin-top: 7em;margin-left: 5em;">No Reorder Received</div>
+        </ion-list>
+      </div>
+    </ion-content>
+    
+  
+  
+  

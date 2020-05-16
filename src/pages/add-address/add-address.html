@@ -1,0 +1,63 @@
+<!--
+  Generated template for the AddAddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Add Address</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <form [formGroup]="addForm">
+      <ion-list>
+        <ion-item>
+          <ion-label floating required>Your Full Name</ion-label>
+          <ion-input type="text" formControlName="full_name"></ion-input>
+        </ion-item>
+        <div class="error">
+            <p *ngIf="addForm.controls.full_name.hasError('required') && addForm.controls.full_name.touched"> full name is required!</p>
+            <p *ngIf="addForm.controls.full_name.hasError('pattern') && addForm.controls.full_name.touched">only small and capital letters are allowed!</p>
+            <p *ngIf="addForm.controls.full_name.hasError('minlength') && addForm.controls.full_name.touched"> Minimum username length is 6!</p>
+            <p *ngIf="addForm.controls.full_name.hasError('maxlength') && addForm.controls.full_name.touched"> Maximum username length is 30!</p>
+          </div>
+        <ion-item>
+          <ion-label floating>Full Address</ion-label>
+          <ion-input type="text" formControlName="full_address"></ion-input>
+        </ion-item>
+        <div class="error">
+            <p *ngIf="addForm.controls.full_address.hasError('required') && addForm.controls.full_address.touched"> full Address is required!</p>
+            <p *ngIf="addForm.controls.full_address.hasError('pattern') && addForm.controls.full_address.touched">only small and capital letters are allowed!</p>
+            <p *ngIf="addForm.controls.full_address.hasError('minlength') && addForm.controls.full_address.touched"> Minimum full Address length is 6!</p>
+            <p *ngIf="addForm.controls.full_address.hasError('maxlength') && addForm.controls.full_address.touched"> Maximum full Address length is 150!</p>
+          </div>
+        <ion-item>
+          <ion-label floating>City</ion-label>
+          <ion-input type="text" formControlName="city"></ion-input>
+        </ion-item>
+        <div class="error">
+            <p *ngIf="addForm.controls.city.hasError('required') && addForm.controls.city.touched"> City is required!</p>
+            <p *ngIf="addForm.controls.city.hasError('pattern') && addForm.controls.city.touched">only small and capital letters are allowed!</p>
+            <p *ngIf="addForm.controls.city.hasError('minlength') && addForm.controls.city.touched"> Minimum City length is 6!</p>
+            <p *ngIf="addForm.controls.city.hasError('maxlength') && addForm.controls.city.touched"> Maximum City length is 20!</p>
+          </div>
+        <ion-item>
+          <ion-label floating>Pin Code</ion-label>
+          <ion-input type="number" formControlName="pincode"></ion-input>
+        </ion-item>
+        <div class="error">
+            <p *ngIf="addForm.controls.pincode.hasError('required') && addForm.controls.pincode.touched"> Pincode is required!</p>
+            <p *ngIf="addForm.controls.pincode.hasError('pattern') && addForm.controls.pincode.touched">only Numbers are allowed!</p>
+            <p *ngIf="addForm.controls.pincode.hasError('minlength') && addForm.controls.pincode.touched"> Minimum Pincode length is 5!</p>
+            <p *ngIf="addForm.controls.pincode.hasError('maxlength') && addForm.controls.pincode.touched"> Maximum Pincode length is 6!</p>
+          </div>
+          <button ion-button color="orange" round full (click)="addAddress()" [disabled]="!addForm.valid">Add My Address</button>
+        <br>
+      </ion-list>
+      </form>
+  </ion-content>
