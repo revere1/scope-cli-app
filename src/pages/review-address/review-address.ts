@@ -88,7 +88,7 @@ export class ReviewAddressPage {
   }
 
   async ngOnInit() {
-    // this.userId = localStorage.getItem('userId');
+    this.userId = localStorage.getItem('userId');
     await this.viewAddress(Global.userId, Global.addId);
     await this.getProfileData();
   }
