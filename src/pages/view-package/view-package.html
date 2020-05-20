@@ -16,16 +16,8 @@
     <b style="color: black">Hyderabad</b>
     <ion-badge item-end style="background-color: #01040a;">Change</ion-badge>
   </ion-item>
-  <p text-center padding style="margin-top:-5px">
-    <b>Help us understand your requirement</b>
-  </p>
-  <ion-card
-    radio-group
-    padding
-    [(ngModel)]="capacity"
-    ngDefaultControl
-    style="margin-top:-1em"
-  >
+  <p text-center padding style="margin-top:-5px"><b>Help us understand your requirement</b></p>
+  <ion-card radio-group padding [(ngModel)]="capacity" ngDefaultControl style="margin-top:-1em">
     <p text-center><b>What is the capacity of your bike?</b></p>
     <ion-item>
       <ion-radio value="Upto 100CC" disable="true"></ion-radio>
@@ -43,24 +35,11 @@
   <!-- - 180CC -->
   <p text-center>On which day do you want the service?</p>
   <div class="row" style="margin-left: 1em">
-    <button
-      ion-button
-      round
-      (click)="daySelect(slot_days, day, 'day')"
-      [ngClass]="{'selected-day': day.selected}"
-      [disabled]="day.disable"
-      color="white"
-      class="btnsize"
-      *ngFor="let day of slot_days"
-    >
+    <button ion-button round (click)="daySelect(slot_days, day, 'day')" [ngClass]="{'selected-day': day.selected}"
+      [disabled]="day.disable" color="white" class="btnsize" *ngFor="let day of slot_days">
       {{day.label}}
-      <ion-datetime
-        *ngIf="day.calander"
-        (ionChange)="dateChange($event)"
-        displayFormat="DD/MM/YYYY"
-        [min]="moment().add(2, 'days').format('YYYY-MM-DD')"
-        [max]="moment().add(2, 'month').format('YYYY-MM-DD')"
-      >
+      <ion-datetime *ngIf="day.calander" (ionChange)="dateChange($event)" displayFormat="DD/MM/YYYY"
+        [min]="moment().add(2, 'days').format('YYYY-MM-DD')" [max]="moment().add(2, 'month').format('YYYY-MM-DD')" (click)="future('Future')">
       </ion-datetime>
 
       <!-- <ion-calendar *ngIf="day.calander" [(ngModel)]="date"
@@ -71,6 +50,7 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field> -->
+
     </button>
     <!-- <button ion-button round (click)="tMro('Tomorrow')" color="white" class="btnsize">Tomrrow</button>
   <button ion-button round (click)="future('Future')" color="white" class="btnsize">Future</button> -->
@@ -80,19 +60,9 @@
 
   <div class="container">
     <div class="row">
-      <button
-        ion-button
-        type="button"
-        round
-        (click)="daySelect(slots, slot)"
-        [disabled]="slot.disable"
-        [ngClass]="{'selected-day': slot.selected}"
-        color="white"
-        class="btnsizetime"
-        *ngFor="let slot of slots"
-      >
-        {{slot.label}}
-      </button>
+      <button ion-button type="button" round (click)="daySelect(slots, slot)" [disabled]="slot.disable"
+        [ngClass]="{'selected-day': slot.selected}" color="white" class="btnsizetime"
+        *ngFor="let slot of slots">{{slot.label}}</button>
       <!-- <button ion-button type="button" round (click)="time2('11AM-1PM')" [disabled]="sec" color="white" class="btnsizetime">11AM to
         1PM</button>
       <button ion-button type="button" round (click)="time3('1Pm-3PM')" [disabled]="third" color="white" class="btnsizetime">1PM to
@@ -101,19 +71,19 @@
         5PM</button>
       <button ion-button type="button" round (click)="time5('5PM-7PM')" [disabled]="fifth" color="white" class="btnsizetime">5PM to
         7PM</button> -->
+
     </div>
   </div>
-  <button ion-button color="danger" full (click)="choosePkg()">
-    Choose A Package
-  </button>
+  <button ion-button color="danger" full (click)="choosePkg()">Choose A Package</button>
   <!-- <button ion-button color="danger" full (click)="viewP(capacity,serviceday,servicetime)">Choose A Package</button> -->
 </ion-content>
+
 
 <!-- Date Buttons -->
 
 <!-- <ion-row radio-group [(ngModel)]="serviceday" ngDefaultControl> -->
 <!-- <ion-col col-6>
-      <ion-item>
+      <ion-item> 
         <ion-label>Today</ion-label>
         <ion-radio value="Today" disable="true"></ion-radio>
       </ion-item>
