@@ -14,6 +14,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
+import { HttpClientModule } from '@angular/common/http'
 import { Connectivity } from "../providers/connectivity-service/connectivity-service";
 import { SpinnerProvider } from "../providers/spinnerProvider";
 import { GoogleMaps } from "../providers/google-maps";
@@ -63,6 +64,7 @@ import { EditAddressPage } from "../pages/edit-address/edit-address";
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
     IonicModule.forRoot(MyApp)
     // CalendarModule

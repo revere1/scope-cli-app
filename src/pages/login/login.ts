@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Global } from '../../Global';
 import { OtpPage } from '../otp/otp';
@@ -23,9 +24,10 @@ import { HomePage } from '../home/home';
 export class LoginPage {
   private signInForm: FormGroup;
   result: any;
+  products:any;
   constructor(public navCtrl: NavController,
     public alertCtrl: AlertController,
-    public http: Http,
+    public http: HttpClient,
     private formBuilder: FormBuilder,
     public navParams: NavParams,
     private toast: ToastController,
@@ -37,11 +39,13 @@ export class LoginPage {
   }
   signIn() {
     localStorage.setItem('mobile', JSON.parse(this.signInForm.get('mobile_number').value))
-    this.http.get(`${Global.url}customer/login/` + this.signInForm.get('mobile_number').value)
-      .subscribe(data => {
-        const result = data.json()
-        if (result.status === 200) {
-          if (result.Messages === undefined) {
+    return this.http.get(`${Global.url}customer/login/` + this.signInForm.get('mobile_number').value)
+    .subscribe((data: any[])=>{
+      console.log(data);
+      this.products = data;
+      console.log("LoginPage -> signIn -> products", this.products)
+        if (this.products.status === 200) {
+          if (this.products.Messages === undefined) {
             // const toast = this.toast.create({
             //   message: `This is OTP:${result.Messages}`,
             //   duration: 2000
@@ -49,16 +53,16 @@ export class LoginPage {
             // toast.present();
           } else {
             const toast = this.toast.create({
-              message: `This is OTP:${result.Messages}`,
+              message: `This is OTP:${this.products.Messages}`,
               duration: 2000
             });
             toast.present();
-            localStorage.setItem('otp', JSON.stringify(result.Messages))
+            localStorage.setItem('otp', JSON.stringify(this.products.Messages))
             this.navCtrl.setRoot(OtpPage);
           }
-        } else if (result.status === 400) {
+        } else if (this.products.status === 400) {
           const toast = this.toast.create({
-            message: result.Message,
+            message: this.products.Message,
             duration: 2000
           });
           toast.present();
@@ -67,7 +71,7 @@ export class LoginPage {
         err => {
           const alert = this.alertCtrl.create({
             title: 'Alert',
-            subTitle: 'Something went wrong ,Please try again!',
+            subTitle: `Something went wrong ,Please try again!${err}`,
             buttons: ['OK']
           });
           alert.present();
