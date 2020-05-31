@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Global } from '../../Global';
 import { OtpPage } from '../otp/otp';
@@ -37,9 +37,19 @@ export class LoginPage {
       mobile_number: ['91', [Validators.required,Validators.minLength(10), Validators.maxLength(12)]],
     });
   }
+
+  getHeader(){
+    let headers = {
+      headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'text/javascript'
+      })
+      };
+      return headers;
+    }
   signIn() {
     localStorage.setItem('mobile', JSON.parse(this.signInForm.get('mobile_number').value))
-    return this.http.get(`${Global.url}customer/login/` + this.signInForm.get('mobile_number').value)
+    return this.http.get(`${Global.url}customer/login/` + this.signInForm.get('mobile_number').value,this.getHeader())
     .subscribe((data: any[])=>{
       console.log(data);
       this.products = data;
